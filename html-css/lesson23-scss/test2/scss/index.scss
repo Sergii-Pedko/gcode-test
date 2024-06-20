@@ -10,13 +10,26 @@
   box-sizing: border-box;
 }
 
-body {// Центруем блоки
+.container {// Центруем блоки
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-}
 
+  @include for-small-up { //ВСТАВЛЯЕМ(вызываем) Миксин - на место @content  (_breakpoints.scss стр.24) - Встанут нужные нам стили
+    flex-direction: row;
+  }
+
+  @include for-medium-up { //ВСТАВЛЯЕМ(вызываем) Миксин - на место @content        (_breakpoints.scss стр.32) - Встанут нужные нам стили
+    flex-direction: row;
+  }
+
+  @include for-large-up { //ВСТАВЛЯЕМ(вызываем) Миксин - на место @content          (_breakpoints.scss стр.40) - Встанут нужные нам стили
+    flex-direction: row;
+  }
+}
+ 
 .square {
   width: 100px;
   height: 100px;
