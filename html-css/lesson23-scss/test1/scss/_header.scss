@@ -1,0 +1,48 @@
+//    1) ИМПОРТИРУЕМ в header.scss -> variables.scss - c ПЕРЕМЕННЫМИ 
+
+@import "./variables";
+
+//----------------------------- ВЛОЖЕННОСТЬ ------------------------------------
+
+.header {
+  background-color: $color-grey; //ВСТАВЛЯЕМ Переменную - цвет Хедера
+}
+
+.nav-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  color: $text-color-secondary;
+  font-weight: 700;
+
+  height: $unit * 7; //ВСТАВЛЯЕМ Переменную $unit и УМНОЖАЕМ ее на 7 = 8px * 7 = 56px
+
+  display: flex;
+  align-items: center;
+
+  &__item {
+    background-color: $color-secondary; //  & -> Означает обращение к ближайшему РОДИТЕЛЮ-nav-list
+    //  Идентичная запись css-> .nav-list__item
+  
+
+    padding: $unit; //ВСТАВЛЯЕМ Переменную $unit
+    margin-left: $unit * 2; //ВСТАВЛЯЕМ Переменную $unit и УМНОЖАЕМ ее на 2 = 8px * 2 = 16px
+
+    border-radius: $border-radius;
+    cursor: pointer;
+
+    &_selected { //  & -> Означает обращение к ближайшему РОДИТЕЛЮ-.list__item
+      //  Идентичная запись css-> nav-list__item_selected
+      
+      background-color: $color-primary;
+    }
+
+    &:hover {//  & -> Означает обращение к ближайшему РОДИТЕЛЮ-.list__item
+      //  Идентичная запись css-> Идентичная запись css-> .nav-list__item:hover
+      //  АНАЛОГИЧНО: &:active; &:focus; &::after
+
+      opacity: 0.7;
+    }
+  }
+}
+

@@ -1,0 +1,11 @@
+@import "./_header"; // ИМПОРТИРУЕМ в index.scss -> header.scss - cо ВСЕМИ стилями для-header 
+
+// ------------------------------------------------------------------------
+* {
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
