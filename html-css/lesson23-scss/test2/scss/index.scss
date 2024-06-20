@@ -1,0 +1,44 @@
+//  Чтобы ВСЕ компелировать в ОДИН-ф-л - styles.css
+//    1) scss-Файлам с кусками кода в названии-вначале
+//               ставим нижний "префикс" -> _header.scss
+               
+//    2) ИМПОРТИРУЕМ в Сводный styles.scss -> следующим образом: 
+
+@import "./_breakpoints";
+
+* {
+  box-sizing: border-box;
+}
+
+body {// Центруем блоки
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: #ff7f50;
+  margin: 8px;
+
+  // Делаем МЕДИАЗАПРОС - через ВЫЗОВ Миксина (_breakpoints.scss стр.20)
+
+  @include for-small-up { //ВСТАВЛЯЕМ(вызываем) Миксин - на место @content          (_breakpoints.scss стр.24) - Встанут нужные нам стили
+  
+    background-color: #8a2be2;  
+  }
+
+  @include for-medium-up { //ВСТАВЛЯЕМ(вызываем) Миксин - на место @content        (_breakpoints.scss стр.32) - Встанут нужные нам стили
+  
+    background-color: #a61;
+  }
+
+
+  @include for-large-up { //ВСТАВЛЯЕМ(вызываем) Миксин - на место @content          (_breakpoints.scss стр.40) - Встанут нужные нам стили
+  
+    background-color: #c47;
+  }
+}
+

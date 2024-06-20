@@ -1,0 +1,42 @@
+$sm: 600px; // ЗАДАЕМ Переменную - для точки перехода-breakpoint
+$md: 900px; // ЗАДАЕМ Переменную - для точки перехода-breakpoint
+$lg: 1200px; // ЗАДАЕМ Переменную - для точки перехода-breakpoint
+
+// -----------------------  МИКСИНЫ (похоже на JS-ф-цию) -----------------------
+
+
+@mixin for-extra-small() { // CОЗДАЕМ Миксин(ф-цию) 
+
+  // Делаем - Медиазапрос
+  @media screen and (max-width: $sm-1) { /*Для Ширины Экрана ДО 600 -1 = 599px*/
+    @content; // используем ДИРЕКТИВУ @content.  Когда ниже мы ВСТАВИМ(вызовем) Миксин ->  @include for-extra-small -> на место @content Встанут нужные нам стили.
+  }
+}
+
+// Использование ДИРЕКТИВЫ @content:
+//https://code.mu/ru/markup/book/prep/sass/mixins-content-blocks/
+
+
+@mixin for-small-up() { // CОЗДАЕМ Миксин(ф-цию) 
+
+  // Делаем - Медиазапрос
+  @media screen and (min-width: $sm) { /*Для Ширины Экрана БОЛЕЕ 600px - ДО 899px*/
+    @content; 
+  }
+}
+
+@mixin for-medium-up() { // CОЗДАЕМ Миксин(ф-цию) 
+
+  // Делаем - Медиазапрос
+  @media screen and (min-width: $md) { /*Для Ширины Экрана БОЛЕЕ 900px - ДО 1199px*/
+    @content; 
+  }
+}
+
+@mixin for-large-up() { // CОЗДАЕМ Миксин(ф-цию) 
+
+  // Делаем - Медиазапрос
+  @media screen and (min-width: $lg) { /*Для Ширины Экрана БОЛЕЕ 1200px*/
+    @content; 
+  }
+}

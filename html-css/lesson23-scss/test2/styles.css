@@ -1,0 +1,36 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: #ff7f50;
+  margin: 8px;
+}
+@media screen and (min-width: 600px) {
+  .square {
+    /*Для Ширины Экрана БОЛЕЕ 600px - ДО 899px*/
+    background-color: #8a2be2;
+  }
+}
+@media screen and (min-width: 900px) {
+  .square {
+    /*Для Ширины Экрана БОЛЕЕ 900px - ДО 1199px*/
+    background-color: #a61;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .square {
+    /*Для Ширины Экрана БОЛЕЕ 1200px*/
+    background-color: #c47;
+  }
+}/*# sourceMappingURL=index.css.map */
