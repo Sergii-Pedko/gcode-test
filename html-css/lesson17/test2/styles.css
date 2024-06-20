@@ -1,0 +1,51 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+} 
+table{
+  margin: 16px;
+  width: 500px; /* РАСТЯГИВАЕМ таблю до нужной ширины - ПОЯВЛЯЕТСЯ Горизонтальный scroll ДЛЯ ВСЕГО САЙТА */
+}
+table, td, th {
+  border: 1px solid black;
+    border-collapse: collapse;/* чтобюы не повторялись граници Всей таблици и ее Ячеек
+                                Визуально приводим к Нормальному виду*/
+
+  /* border-spacing: 10px; Расстояние между границами ячеек-
+                           видно, когда border-collapse: collapse; ОТКЛЮЧЕНО  */
+}
+td, th{
+  padding: 4px;
+  text-align: right;
+}
+
+tr {
+  height: 40px;
+}
+
+div { /* Чтобы СКРОЛИЛАСЬ ТОЛЬКО ТАБЛИЦА !!! - ВСТАВЛЯЕМ таблю в ОТДЕЛЬНЫЙ БЛОК */
+  overflow-x: auto;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+th {
+  background-color: aqua;
+}
+
+tfoot{
+  font-weight: 700;
+}
+
+tbody tr:hover {
+  color: white;
+  background-color: #aaa;
+}
+
+caption {
+  margin-bottom: 8px;
+}

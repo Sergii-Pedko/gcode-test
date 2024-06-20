@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  margin: 16px;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+td {/* Для всех ЯЧЕЕК */
+  height: 50px;
+  width: 50px;
+  background-color: black; /* Сначала закрашиваем ВСЕ- черным - потом делим на ЧЕтные и НЕ Четные Ячейки - их красим в белый */
+  border: 1px solid black;
+}
+
+table tr:nth-child(even) td:nth-child(even) { /* ЧЕтные Ячейки (в четных строках) */
+  background-color: white;
+}
+
+table tr:nth-child(odd) td:nth-child(odd) { /*НЕ четные Ячейки(в НЕ четных строках) */
+  background-color: white;
+ 
+}
+
+table tr:first-child td { /* ВСЕ ЯЧЕЙКИ Первой Строки-A, B, C....- Верхнее */
+  background-color: white;
+  text-align: center;
+  border: none;
+}
+
+table tr:last-child td { /* ВСЕ ЯЧЕЙКИ ПОСЛЕДНЕЙ Строки-A, B, C....- Нижнее*/
+  background-color: white;
+  text-align: center;
+  border: none;
+}
+
+table tr>td:first-child {/* ВСЕ ПЕРВЫЕ Ячейки в Строках - Левые 1,2,3... */
+  background-color: white;
+  text-align: center;
+  border: none; 
+} 
+ 
+table tr>td:last-child { /* ВСЕ Последние Ячейки в Строках - ПРАВЫЕ 1,2,3... */
+  background-color: white;
+  text-align: center;
+  border: none;
+  /* color: red; */
+}
+
+
+

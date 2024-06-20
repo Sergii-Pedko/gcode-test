@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simple table</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div>
+
+      <table> <!-- Вся табл.(как Сайт) -->
+        <caption>  <!-- ЗАГОЛОВОК табл. -->
+          Shopping list
+        </caption>
+        <thead> <!-- header - для табл. -->
+          <tr>
+            <th>Product</th>
+            <th>Amount</th>
+            <th>Price</th>
+            <th>Subtotal</th>
+          </tr>
+        </thead>
+        <tbody> <!-- body - для табл. -->
+          <tr>
+            <td>Milk</td>
+            <td>3</td>
+            <td>$2</td>
+            <td>$6</td>
+          </tr>
+          <tr>
+            <td>Bread</td>
+            <td>4</td>
+            <td>$1</td>
+            <td>$4</td>
+          </tr>
+          <tr>
+            <td>Meat</td>
+            <td>5</td>
+            <td>$10</td>
+            <td>$50</td>
+          </tr>
+        </tbody>
+        <tfoot> <!-- footer - для табл. -->
+          <tr>
+            <td colspan="3">Total</td> <!-- Объединяю 3 ГОРИЗОНТАЛЬНЫЕ ячейки
+                colspan="3"
+                Cколько КОЛОНОК бедет занимать данная ЯЧЕЙКА  -->
+       <!-- <td></td>
+            <td></td> -->
+  
+            <td>$60</td> <!-- Выводим СУММУ по столбцу-Total -> 6 + 4 + 50 = $60 --> 
+          </tr>
+        </tfoot>
+      </table>
+
+    </div>
+  </body>
+</html>
