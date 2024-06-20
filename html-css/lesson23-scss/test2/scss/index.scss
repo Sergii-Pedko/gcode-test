@@ -13,20 +13,13 @@
 .container {// Центруем блоки
   height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; //Ставим по центру - в столбик!!!
   justify-content: center;
   align-items: center;
 
-  @include for-small-up { //ВСТАВЛЯЕМ(вызываем) Миксин - на место @content  (_breakpoints.scss стр.24) - Встанут нужные нам стили
-    flex-direction: row;
-  }
-
-  @include for-medium-up { //ВСТАВЛЯЕМ(вызываем) Миксин - на место @content        (_breakpoints.scss стр.32) - Встанут нужные нам стили
-    flex-direction: row;
-  }
-
-  @include for-large-up { //ВСТАВЛЯЕМ(вызываем) Миксин - на место @content          (_breakpoints.scss стр.40) - Встанут нужные нам стили
-    flex-direction: row;
+  @include gorizont-landscape { //ВСТАВЛЯЕМ(вызываем) Миксин - на место @content (_breakpoints.scss стр.48) - Встанут нужные нам стили
+  
+    flex-direction: row; 
   }
 }
  
