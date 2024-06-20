@@ -26,7 +26,7 @@
   
 
     padding: $unit; //ВСТАВЛЯЕМ Переменную $unit
-    margin-left: $unit * 2; //ВСТАВЛЯЕМ Переменную $unit и УМНОЖАЕМ ее на 2 = 8px * 2 = 16px
+    margin-left: $unit; //ВСТАВЛЯЕМ Переменную $unit
 
     border-radius: $border-radius;
     cursor: pointer;
