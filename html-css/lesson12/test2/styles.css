@@ -1,0 +1,38 @@
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
+}
+h1 {
+  font-size: 74px;
+
+  margin: 0 auto; /* Центруем по центру странищи*/
+  width: 50%; /* Ширина h1 - ПОЛОВИНА ШИРИНЫ Документа*/
+
+         /* ОБРЕЗАНИЕ ТЕКСТА в рамку ТРОЕТОЧИЕМ */
+
+  overflow: hidden; /* все, что ПЕРЕПОЛНЯЕТ пределы блока - СПРЯТЬАТЬ 
+                       часть текстка будет ОБРЕЗАНА*/
+
+  white-space: nowrap; /* Свойство white-space управляет тем,
+                          как обрабатываются ПРОБЕЛЬНЫЕ символы ВНУТРИ элемента.
+    https://developer.mozilla.org/ru/docs/Web/CSS/white-space */
+
+   text-overflow: ellipsis; /* Свойство определяет, как будет сообщаться
+                              скрытое содержимое переполнения.
+                              ellipsis - ТРОЕТОЧИЕ
+    https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow  */
+}
+
+div {
+  height: 200px;
+  background-color: coral;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 200px;
+}
+
