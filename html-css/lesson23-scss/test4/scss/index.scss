@@ -1,0 +1,43 @@
+//  Чтобы ВСЕ компелировать в ОДИН-ф-л - style.css
+//    1) scss-Файлам с кусками кода в названии-вначале
+//               ставим нижний "префикс" -> _header.scss
+               
+//    2) ИМПОРТИРУЕМ в Сводный style.scss -> следующим образом: 
+
+@import "./_layout";
+
+
+* {
+  box-sizing: border-box;
+}
+
+.navigation {
+  background-color: #ff7f50;
+  min-height: 200px;
+
+  display: flex;
+}
+
+.products-list {
+  background-color: #006400;
+  min-height: 200px;
+
+  display: flex;
+}
+
+.news {
+  background-color: #0ff;
+  min-height: 200px;
+
+  display: flex;
+}
+
+span {
+  text-transform: lowercase;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 8px;
+  background-color: #faebd7;
+  border-radius: 4px;
+
+  margin: auto; /* Центруем - при заданном display: flex; КОНТЕЙНЕРА-news-3 */
+}

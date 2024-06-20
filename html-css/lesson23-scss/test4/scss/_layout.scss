@@ -1,0 +1,21 @@
+@media screen and (min-width: 600px) { 
+  .products {
+    display: flex;
+  }   
+  .navigation {
+     width: 50%; 
+  } 
+  .products-list {
+    flex-grow: 1;  
+  } 
+}
+
+
+@media screen and (min-width: 900px) { 
+  .content { display: flex; }
+
+  .products { flex: 2; }
+
+  .news { flex: 1; }  
+  /* https://developer.mozilla.org/ru/docs/Learn/CSS/CSS_layout/Flexbox */
+}
