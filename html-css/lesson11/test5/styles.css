@@ -1,0 +1,14 @@
+.gallery{
+  display: flex;
+  
+
+  overflow-x: auto; /*Появится - КРОЛЛ только по Оси-X
+                      и только в том случае, если прроизошло переполнение блока*/
+
+  cursor: all-scroll;
+
+}
+
+.thumb {
+  margin: 8px;
+}

@@ -1,0 +1,28 @@
+.container :nth-of-type(1) {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  
+  display: none;/* display: none; - Блок ПОЛНОСТЬЮ ВЫНИМАЕТСЯ из Кнтента->
+                   т.е. Нижние блоки поднимаются НАВЕРХ */
+}
+
+.container :nth-of-type(2) {
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+  
+ visibility: hidden; /* visibility: hidden; - Блок СТАНОВИТСЯ- НЕВИДИМЫМ,
+                        но НЕ ВЫНИМАЕТСЯ из Кнтента->
+                        т.е. Нижние блоки НЕ Подымаются НАВЕРХ */
+}
+
+.container :nth-of-type(3) {
+  width: 100px;
+  height: 100px;
+  background-color: coral;
+  
+ 
+  visibility: visible;  /*visibility: visible; - Cв-во по УМОЛЧАНИЮ - блок ВИДИМЫЙ
+                          Аналогично  - display: block (Если нам нужен Видимый Бшлочный элемент*/
+}

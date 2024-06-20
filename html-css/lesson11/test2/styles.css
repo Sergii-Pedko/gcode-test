@@ -1,0 +1,37 @@
+html {
+  box-sizing: border-box;
+}
+
+.articles {
+  display: flex;
+}
+
+.articles div{
+  width: 150px;
+  height: 100px;
+  background-color: beige;
+  margin: 16px;
+} /* Задав такие параметры - текст вылезет за пределы блока 150х100px */
+
+
+.cropped {
+  overflow: hidden; /* все, что ПЕРЕПОЛНЯЕТ пределы блока - СПРЯТЬАТЬ 
+                       часть текстка будет ОБРЕЗАНА*/
+}
+.both-scrolls {
+  overflow: scroll; /* Появится - 2 СКРОЛЛА-НАВСЕГДА - ВЕРТИКАЛЬНЫЙ-Прокручивается*/
+  cursor: all-scroll;
+}
+
+.vertical-scroll {
+   overflow: auto; /*Появится - ТОЛЬКО Вертикальный СКРОЛЛ- и только в том случае, если прроизошло переполнение блока*/
+
+  /* overflow-y: auto;   СКРОЛЛ только по Оси-Y*/
+  /* overflow-x: auto;  СКРОЛЛ только по Оси-X*/
+
+  cursor: all-scroll;
+}
+
+
+
+

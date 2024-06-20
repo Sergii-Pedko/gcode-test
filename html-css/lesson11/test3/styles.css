@@ -1,0 +1,49 @@
+.dropdown {
+  margin: 16px;
+  display: inline-block; /*задаем, чтобы встроенные ul - НЕ занимал всю ширину документа */
+}
+
+.menu-button {    
+  padding: 16px;
+  background-color: darkgreen;
+  opacity: 0.8;
+  font-size: 16px;
+  color: white;
+
+  cursor: pointer;
+  display: inline-block; /*span-строчный элемент - применяем это св-во, чтобы сработал отступ - как ублочного элениента   */  
+}
+
+.menu-list {    
+  list-style-type: none;
+  background-color: lightcyan;
+  color: black;
+  margin: 0;
+  padding: 0;     
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, .2);  
+
+  min-width: 120px;
+
+  position: relative;  /* Списоk-ul придвинется в протную к Родителю-dropdown" */
+  z-index: 1; /* чтобы МЕНЮ выпадало НАД "Hover me" */
+
+  display: none;  /*Изначально СКРЫВАЕМ блок - Блок ПОЛНОСТЬЮ ВЫНИМАЕТСЯ из Кнтента->
+  т.е. Нижние блоки поднимаются НАВЕРХ */
+}
+
+.menu-item {
+  padding: 16px;    
+}
+
+.dropdown:hover .menu-list {
+  display: block;   /*При наведении - показываем (по умолчанию) список-ul */    
+}
+
+.menu-button:hover {
+  opacity: 1;
+}
+.menu-list:hover {
+  background-color: ghostwhite;
+}
+
+

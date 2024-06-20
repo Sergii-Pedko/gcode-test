@@ -1,0 +1,27 @@
+.text {
+  display: inline-block;  /* Делаем строчн-блочным - чтобы подчеркивание было только на ширину слова, а не ширину Документа - т.к. изначально  <div class="text"> - БЛОЧНЫЙ элемент  и подчеркивание было бы на ВСЮ ширину Документа*/
+  margin: 16px;
+  border-bottom: 1px dotted black;
+
+  position: relative;
+}
+
+.tooltip {
+  background-color: grey;
+  color: white;
+  border-radius: 4px;
+  padding: 8px;
+
+  position: absolute; /* Позиционируемся относительно-
+                        Родителя-<div class="text"> position: relative; */
+  bottom: -40px;
+  left: 0;
+
+  display: none;  /*Изначально СКРЫВАЕМ блок -
+                    Блок ПОЛНОСТЬЮ ВЫНИМАЕТСЯ из Кнтента-> т.е. Нижние блоки поднимаются НАВЕРХ */
+}
+
+.text:hover .tooltip {
+  display: block;  /*При наведении - показываем (по умолчанию)
+                    <span class="tooltip">*/ 
+}                    
