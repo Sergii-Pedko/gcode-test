@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box; /* Для ТОЧНОГО расположения 2 КОНТЕЙНЕРОВ - горизонтально на странице .container{ width: 50%;}  Каждый-container - ПОЛОВИНА СТРАНИЦИ */
+}
+
+section {
+  background: aquamarine;
+  padding: 16px;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+}
+
+footer {
+  height: 30px;
+  border: 2px solid black;
+}
+/* ------------------------------------- */
+
+.red {
+  background-color: red;
+  float: right;
+}
+
+.green {
+  background-color: green;
+  float: left;
+}
+
+.footer {
+  clear:both; /* Когда элементы - float:left - РОДИТЕЛЬ СХЛОПЫВАЕТСЯ !!!!
+  Отмена обтекания НИЖНИХ ЭЛЕМЕНТОВ */
+}
+
+.container{
+  float:left;
+  width: 50%;/* Каждый-container - ПОЛОВИНА СТРАНИЦИ */
+}
+
