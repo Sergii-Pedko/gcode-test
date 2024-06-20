@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.image-container {    
+  text-align: center;  /* Центруем контейнер с Рис. по Горизонтали*/
+  position: relative; /* Задаем Родителю-relative, чтобы отцентровать  ПОТОМКА
+                         <span class="image-button">Later I'll do something</span>
+
+                        position: absolute;   
+                        top: calc(50% - 25px);
+                        left: calc(50% - 100px);
+
+
+   Центруем контейнер с Рис. по Горизонтали*/
+  
+}
+
+.image {    
+max-width: 100%; /*РАСТЯНУТЬСЯ НА ВСЮ ширину КРТИНКИ - до ее Реальных Размеров
+когда РИС. примет реальные размеры - при дальнейшем расширении  Экрана - Рис. дальше РАСШИРЯТЬСЯ НЕ БУДЕТ*/
+}
+
+.image-button { 
+  display: block; /* изначально span-строчный элем.-чтобы применилась width/height */
+
+  /* Центруем  ПОТОМКА внутри <div class="image-container"> */
+  position: absolute;   
+
+  top: calc(50% - 27px);
+  left: calc(50% - 100px);
+  /*где проценты относятся к размерам контейнера,
+      а пиксели - к размерам самой "image-button" */
+  /* ------------------------------------------------------- */
+
+  width: 200px;
+  height: 50px;
+  line-height: 50px; /* Текст в Карточке центруем по Вертикали: 
+                       height=line-height=50px */
+
+  background-color: bisque;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+  opacity: 0.5;
+  cursor: pointer;    
+}
+
+.image-button:hover {
+  opacity: 1;
+}

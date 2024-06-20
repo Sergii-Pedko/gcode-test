@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+.main-video {
+  display: block; /* video-Строчный элем. чтобы применялись ШИРИНА-Высота
+                     делаем Блолочным элем */
+
+  width: 500px;
+
+  margin: 200px auto 0; /* Центруем */
+}
+
+

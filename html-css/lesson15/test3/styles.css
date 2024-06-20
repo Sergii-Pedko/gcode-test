@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+iframe {
+  display: block;
+  margin: 100px auto; /* Центруем */
+
+  width: 500px;
+  height: 400px; /*- все сработает,
+                      но лучшие параметры заданы в iframe->width="560" height="315" */
+}
+
+
+
