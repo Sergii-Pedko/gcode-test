@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0 32px;
+  padding: 8px;
+  background-color: antiquewhite;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+
+.square {
+  background-color: tomato;
+  width: 100px;
+  height: 100px;
+
+  transform: translate(200px, 100px) rotate(45deg) scale(1.5);
+}
