@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  /* Центруем КВАДРАТИКИ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;  
+}
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: #8a2be2;  
+  margin: 8px;
+}
+
+      /*тип */
+@media screen and (max-width: 600px) { /*Для Ширины Экрана ДО 600px*/
+                   /* параметры */
+  .square {
+    background-color:#ff7f50; ;/* меняем цвет квадратов */  
+  }                  
+}
+
+@media screen and (orientation: portrait) { /* когда ВЫСОТА > ШТРИНА*/
+  .container {
+    flex-direction: column;/* Изначально квадраты- по горизонтали
+                               - зададим по ВЕРТИКАЛИ */
+  }                  
+}
+
