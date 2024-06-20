@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+
+  <title>Геометрические фигуры</title>
+</head>
+<style>
+  * {
+    box-sizing: border-box; /* ОБЯЗАТЕЛЬНО - иначе ТРЕУГОЛЬНИК будет с "обрезанной шапкой" */
+  }
+
+  .rectangle1 { /*  ЗАКРУГЛЯЕМ УГЛЫ Прямоугольника - border-radius: 10px;  */
+  width: 100px;
+  height: 50px;
+  background-color: forestgreen;
+  margin: 50px;
+  
+  border-radius: 16px;
+}
+
+.oval { /* Овалл - border-radius: 50%; */
+  width: 100px;
+  height: 50px;
+  background-color: darkmagenta;
+  margin: 50px;
+  
+  border-radius: 50%;
+}
+
+.circle { /* КРУГ - width = height; border-radius: 50%; */
+  width: 100px;
+  height: 100px;
+  background-color: aquamarine;
+  margin: 50px;
+  
+  border-radius: 50%;
+}
+
+.triangle { /* Треугольник(перевернутый) - 1) Задаем border-top-color: red;
+                                           2) border-Толшина  = ПОЛОВИНЕ height */
+  width: 100px;
+  height: 100px;
+  /*background-color: yellow; - СНАЧАЛА ставим - для наглядности */
+  margin: 50px;
+
+  
+  border: 50px solid transparent;/* 1) Толщину сначала задаем любую - потом уменьшаем
+                                     (в инсрпкторе - для наглядеости) до
+                                      ПОЛОВИНЫ height
+                                   2) Цвет сначала задаем любой - для наглядности */
+  border-top-color: brown;
+}
+</style>
+<body>
+  <div class="rectangle1"></div><!-- ЗАКРУГЛЯЕМ УГЛЫ Прямоугольника - border-radius: 10px;  -->
+
+    <div class="oval"></div><!-- Овалл - border-radius: 50%;-->
+
+    <div class="circle"></div><!-- КРУГ - width = height; border-radius: 50%;-->
+
+    <div class="triangle"></div><!-- КРУГ - border: ПОЛОВИНА-height solid transparent;
+                                            border-top-color: ; -->
+  
+</body>
+</html>
