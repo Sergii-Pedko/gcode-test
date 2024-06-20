@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Form inputs</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU="
+      crossorigin="anonymous"
+    />
+    <style>
+      div { margin: 16px; }
+    </style>
+  </head>
+  <body>
+    <form>
+      <div>
+        <label for="last-name">Last Name </label>
+          <input type="text" id="last-name" name="lastName" value="Emerson" readonly>      
+      </div>
+      <div>
+        <label for="number">Age</label>
+        <input type="number" id="number" min="3" max="10" name="age" value="17" required>
+      </div>
+      <div>
+          <input id="ch" type="checkbox"  name="agree" disabled>
+          <label for="ch">Accept terms and conditions</label>
+      </div>
+      <div class="choose-gender">
+        <input id="male"  type="radio"  name="gender" >
+        <label for="male">Male</label>
+
+        <input  id="female" type="radio"  name="gender">
+        <label for="female">Female</label>
+
+        <input  id="secret" type="radio"  name="gender" checked>
+        <label for="secret">Secret</label>
+      </div>
+      <div>
+        <textarea  name="description" placeholder="Write description..."  maxlength="10"></textarea>
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+  </body>
+</html>
