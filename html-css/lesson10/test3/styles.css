@@ -1,0 +1,96 @@
+.header {
+  height: 40px;
+  background-color: yellow;
+
+  display: flex;
+  align-items: center; /* Центруем ВЕРТИКАЛЬНО (по ВТРОСТЕПЕННОЙ ОСИ-сross axis)
+                          About Prpducts Contacts*/
+}
+
+.navigation { /* <ul class="navigation"> - ОДНОВРЕМЕННО является
+                Flex-элементом (от header) и 
+                Flex-контейнером  для вложенных-<li>*/
+  margin: 0; /* прибиваем navigation - к потолку сайта*/
+  padding: 0;
+  list-style-type: none;
+
+  display: flex; /* Выстраиваем About Prpducts Contacts - В одну линию*/
+
+}
+
+.navigation__item {
+  margin-left: 16px;
+}
+
+.footer {
+  height: 40px;
+  background-color: green;
+
+  display: flex;
+}
+
+.footer__text {
+  margin: auto; /* Центруем ПОСЕРЕДИНЕ Блока, если он находится
+                                       ВНУТРИ flex-контейнера- стр.28*/
+}
+
+/* --------------------Прибить footer к САМОМУ НИЗУ СТРАНИЦИ-----------------*/
+
+.page{ /* Чтобы прибить footer к САМОМУ НИЗУ СТРАНИЦИ ->
+        ВЕСЬ сайт-контент - вставляем в КОНТЕЙНЕР-page -> display: flex
+   */
+  display: flex;
+
+  
+  flex-direction: column;/* Расположение дочерних элементов ПО ОСЯМ - 
+                            Направление Осей - >ПОМЕНЯЮТСЯ!!! */
+  
+  min-height: 100vh; /* Высота на ВЕСЬ ЭКРАН и растянем  <main class="content">*/
+}
+
+.content {
+  flex-grow: 1; /* Растягиваем  <main class="content">*/
+
+  display: flex; /* Чтобы Поместить ГОРИЗОНТАЛЬНО 
+                   <section class="dashboard"> & <aside class="news"> */
+}
+/* ---------------------------------------------------------------------- */
+
+ .dashboard { 
+  background-color: pink;
+  
+  flex-grow: 1; /*<section class="dashboard">
+                  мы РАСТЯНЕМ до <aside class="news">  */
+             
+  /* Чтобы отцентровать посередине блока - <h2>I can use Flexbox!!!</h2> */
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.news {
+  background-color: gray;
+  width: 200px; /*  <aside class="news"> - дадим Фиксированную Ширину */
+
+  display: flex; 
+  flex-direction: column; /*  Для центровки <h2>News</h2> */
+}
+
+.news h2 {
+  margin: 16px auto;
+}
+
+.news li {
+  list-style-type: none;
+  height: 40px;
+}
+
+.news ul {
+  margin-left: 16px;
+
+  margin-top: 16px;
+  margin-bottom: 0px;
+  padding: 0;
+}
+
+
+

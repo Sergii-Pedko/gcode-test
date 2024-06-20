@@ -1,0 +1,18 @@
+.horizontal {
+  height: 50px;
+  display: flex;
+  flex-direction: row;/* Расположение дочерних элементов ПО ОСЯМ - 
+                  row - ПО УМОЛЧАНИЮ */
+  
+  align-items: center; /* ЦЕНТРОВКА по ВТРОСТЕПЕННОЙ ОСИ-сross axis  */
+  justify-content: space-around; /*  ЦЕНТРОВКА ГЛАВНОЙ ОСИ-main axis */
+}
+
+.vertical {
+  height: 200px;
+  flex-direction: column;/* Расположение дочерних элементов ПО ОСЯМ - 
+                            Направление Осей - >ПОМЕНЯЮТСЯ!!! */
+  display: flex;
+  align-items: center; /* ЦЕНТРОВКА по ВТРОСТЕПЕННОЙ ОСИ-сross axis  */
+  justify-content: space-around; /*  ЦЕНТРОВКА ГЛАВНОЙ ОСИ-main axis */
+}

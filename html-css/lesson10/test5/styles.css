@@ -1,0 +1,46 @@
+html {
+    box-sizing: border-box; /* чтобы ШИРИНА ЭЛЕМЕНТОВ РАССЧИТЫВАЛАСЬ ПО РАМКЕ  - т.е.
+
+    В ДАННОМ СЛУЧАЕ: width + padding + border + 
+                              (margin будет за пределами блока)
+При заданных
+width: 300px;
+padding: 16px;
+Ширина БЛОКА = 268+16+16 = 300px т.е соответствуют width: 300px; */
+}
+
+header { /* Ровняем по центру -  <h1>Articles</h1>*/   
+    display: flex;
+    justify-content: center; 
+    align-items:center
+}
+
+.articles-list {
+    display: flex;
+    flex-direction: row; /* ПО УМОЛЧАНИЮ */
+
+     flex-wrap: wrap; /*Flex-элементы ПЕРЕНОСЯТСЯ -
+                   на ВТРОСТЕПЕННУЮ ОСЬ-сross axis , располагаясь в
+                   несколько ГОРИЗОНТАЛЬНЫХ РЯДОВ (если не помещаются в один ряд) */   
+}
+
+.article {
+    margin: 8px;
+    padding: 16px;
+    background-color: bisque;
+
+    flex-basis: 268px; /* стр. 9 */
+    flex-shrink: 0;/* При СЖАТИИ экрана блок будет сжиматься только
+                      до Заданного flex-basis(width) - т.е. 268px стр. 32 */
+
+     flex-grow: 1;/* При изменении экрана блок МОЖЕТ РАСТЯГИВАТЬСЯ  */
+}
+
+
+
+
+
+
+
+
+
