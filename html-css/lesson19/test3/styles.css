@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.container {/* По центру экрана*/
+  width: 100vw;
+  height: 100vh; 
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes blinking {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes moving {
+  from {
+    left: 0;
+    opacity: 1;
+  }
+  to {
+    left: 70px;
+  }
+}
+
+.spinner-text {
+  font-family: monospace;
+  font-size: 16px;
+  text-transform: uppercase;
+
+  animation-name: blinking;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  transition-timing-function: linear;
+}
+
+.spinner {
+  position: relative; 
+}
+
+.rect {
+  position: absolute;
+
+  width: 10px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: black;
+
+  animation: moving 2s alternate infinite, blinking 2s infinite linear;
+
+  /* animation-name: blinking;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  transition-timing-function: linear; */
+
+  /* animation-name: moving;
+  animation-duration: 2s;
+  animation-direction: alternate; 
+  animation-iteration-count: infinite; */
+}
+
+
+

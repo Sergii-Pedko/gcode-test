@@ -1,0 +1,41 @@
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: coral;
+
+  position: absolute;
+
+  animation: move 4s; /*4s- Подолжительность анимации */
+  animation-iteration-count: 2; /*Кол-во Повторений Анимации */
+  animation-direction: alternate;   /*НАПРАВЛЕНИЕ Анимации-туда-сюда */
+  
+}
+
+@keyframes move {
+  0% {
+    left: 0;
+    background-color: coral;
+  }
+  25% {
+    left: 300px; 
+    top: 0;
+    background-color: cornflowerblue;
+  } 
+  50% {
+    left: 300px;
+    top: 300px;
+  } 
+  75% {
+    left: 0;
+    top: 300px;
+    background-color: aqua;
+  }
+  100% {
+    left: 0;
+    top: 0;
+    background-color: yellowgreen
+  } 
+}
+
+
+
