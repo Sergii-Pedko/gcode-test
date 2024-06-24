@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get interval sum</title>
+  </head>
+  <body>
+    <script>
+   
+    function getIntervalSum(from, to) {
+        let sum = 0;
+        for (let i = from; i<=to; i++) {
+          // console.log(i); - выдаст промежуток чисел
+          if (i % 2 === 0) { //Все четные
+            sum = sum + i;
+          }; 
+        };
+        return sum;
+    };
+
+   console.log(getIntervalSum(5, 10)); //6 + 8 + 10 = 24
+   console.log(getIntervalSum(0, 20)); //110
+   console.log(getIntervalSum(120, 160)); //2940
+    </script>
+  </body>
+</html>

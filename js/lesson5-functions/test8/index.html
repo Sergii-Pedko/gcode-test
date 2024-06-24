@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Кратные на промежутке</title>
+  </head>
+  <body>
+    <script>
+      function findDivCount(a, b, n) {
+        let count = 0;
+        for (let i = a; i <= b; i++) {
+          (i % n === 0) ? count = count + 1 : 0;         
+        };
+        return count;
+      };
+
+      console.log(findDivCount(2, 6, 2)); /*Кратные 2 (делятся на 2 БЕЗ ОСТАТКА)
+                                            на промежутке от 2 до 6
+                                                      2 4 6 (ТРИ числа) */ 
+
+    </script>
+  </body>
+</html>

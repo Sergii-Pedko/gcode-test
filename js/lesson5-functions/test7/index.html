@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find odds sum</title>
+  </head>
+  <body>
+    <script>
+    /* вставить логику расчета сумм ДВУХ промежутков - из ф-ции sum(from, to)
+    Нужно найти сумму чисел на каждом промужетке и сравнить эти суммы. Если сумма чисел на ПЕРВОМ промежутке больше - вернуть true, в другом случае вернуть false*/
+
+    function sum(from, to) {
+      let sum = 0;
+      for (let i = from; i <= to; i++) {
+        sum = sum + i;
+      };
+      return sum;
+    };
+
+    function compareSums(firstFrom, firstTo, secondFrom, secondTo) {
+       return (sum(firstFrom, firstTo) > sum(secondFrom, secondTo)) ? true : false; 
+    };
+
+    console.log(sum(5, 15)); //110
+    console.log(sum(3, 5));  //12
+
+    console.log(compareSums(5, 10, 5, 10)); // ===> false
+    console.log(compareSums(5, 15, 3, 5));  // ===> true
+    console.log(compareSums(-2, 5, 5, 9));  // ===> false
+
+    </script>
+  </body>
+</html>
