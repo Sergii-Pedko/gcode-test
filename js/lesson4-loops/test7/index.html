@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find odds sum</title>
+  </head>
+  <body>
+    <script>
+      /*1)  На промежутке от 0 до 1000  включительно, для каждого нечетного числа    
+            выводи в консоль слово Found
+        2)  Найди сумму таких чисел. Если их сумма умноженная на 5 больше 5000, выводи 
+            в консоль текст Bigger, в другом случае выводи текст Smaller or equal */ 
+
+      let sum = 0;  
+
+      for (let i = 0; i <= 1000; i++) {
+        if (i % 2 === 1) { // нечетное число  
+          console.log('Found');
+          sum = sum + i;
+        };
+      };
+
+      if (sum * 5 > 5000) {   
+        console.log('Bigger');
+      } else {
+        console.log('Smaller or equal');
+      };
+
+    </script>
+  </body>
+</html>

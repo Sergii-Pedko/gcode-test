@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compare div and mod</title>
+  </head>
+  <body>
+    <script>
+      /* Посчитай сумму чисел на промежутке от 1 до 1000 включительно. Потом посчитай целую часть - div от деления этой суммы на число 1234 а так же остаток от деления - mod. Выведи в консоль true если целая часть от деления больше остатка от деления и false в другом случае */
+      
+      let from = 1;
+      let to = 1000;
+      let sum = 0;
+
+      for (let i = from; i<=to; i++) {
+        sum = sum + i;
+      };
+
+      console.log(`Сумма = ${sum}`);
+
+      // Функция Math.trunc() возвращает целую часть числа путём удаления всех дробных знаков.
+
+      let div = Math.trunc( sum / 1234 );
+      console.log(`Целая часть от деления = ${div}`);
+
+      let mod = sum % 1234;
+      console.log(`Остаток от деления = ${mod}`);
+
+      console.log( (div > mod) ? true : false );
+        
+    </script>
+
+
+  </body>
+</html>
