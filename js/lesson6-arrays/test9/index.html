@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Переверните массив</title>
+  </head>
+  <body>
+    <script>
+      // Создай функцию reverseArray, которая будет принимать массив чисел и возвращать зеркальный массив
+
+      const reverseArray = (arr) => {
+        if (Array.isArray(arr) === false) {
+          return null;
+        }else {
+          let copyArr = arr.slice(); //Копия исходного массива
+          copyArr.reverse();
+          return copyArr;
+        };
+      };
+
+      console.log( reverseArray([11, 4, 8, 3]) ); // [3, 8, 4, 11]
+      console.log( reverseArray([]) ); // []
+      console.log( reverseArray([100, 50]) ); // [50, 100]
+      console.log( reverseArray(100, 50) ); // null
+    </script>
+  </body>
+</html>

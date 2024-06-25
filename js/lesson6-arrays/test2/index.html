@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sum array</title>
+  </head>
+  <body>
+    <script>
+      // Создай функцию getSum, которая будет принимать массив чисел и вернет сумму всех элементов этого массива
+
+      function getSum(arr) {
+        let sum = 0;
+        if (Array.isArray(arr) === false) {
+          return null;
+        } else {
+          for (let i = 0; i < arr.length; i++) {
+            sum = sum + arr[i];
+          };
+        };
+        return sum; 
+      };  
+
+      console.log(getSum([1, 10, -10, 4])); //5
+      console.log(getSum([1])); //1
+      console.log(getSum([-8, 8])); //0
+      console.log(getSum(10, 12, 14)); //null
+    </script>
+  </body>
+</html>

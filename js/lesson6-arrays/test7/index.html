@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find odds sum</title>
+  </head>
+  <body>
+    <script>
+      // Напиши функцию, которая будет находить сумму элементов входящего массива и возвращать true если сумма больше 100 и false в другом случае
+       
+      const checkSum = arr => {
+        let sum = 0;
+        if ( Array.isArray(arr) === false) {
+          return null;
+        }else {
+          for (let i = 0; i < arr.length; i++) {
+            sum = sum + arr[i];
+          };
+          // return sum;
+          return (sum > 100) ? true : false;
+        };
+      };
+
+      console.log( checkSum([10, 10, 10]) ); // ===> false);
+      console.log( checkSum([10, 99, 1]) ); // ===> true);
+      console.log( checkSum([-6, -3, 200]) ); // ===> true);
+
+    </script>
+  </body>
+</html>

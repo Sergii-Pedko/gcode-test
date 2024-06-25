@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Special numbers</title>
+  </head>
+  <body>
+    <script>
+      // Создай функцию getSpecialNumbers, которая вернет массив всех чисел кратных 3 из промежутка от-from до-to
+      function getSpecialNumbers(from, to) {
+        let newArr = [];
+        for (let i = from; i <= to; i++) {
+          if ( i % 3 === 0) {
+            newArr.push(i);
+          };
+        };
+        return newArr;
+      };   
+
+      console.log( getSpecialNumbers(1, 10) ); //==> [3, 6, 9]
+      console.log( getSpecialNumbers(-10, 10 ) ); // ==> [-9, -6, -3, 0, 3, 6, 9]);  
+      console.log( getSpecialNumbers(1, 2) ); // ==> [ ] 
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spread and destructuring</title>
+  </head>
+  <body>
+    <script>
+      /*Ф-ция-swap, которая будет принимать массив, первый элемент ставить в конец и
+                    возвращать результат. Для решения этой задачи используй СПРЕД оператор и ДЕСТРУКТУРИЗАЦИЮ 
+
+      Ф-ция-swapManual, которая будет делать тоже самое что и ф-ция-swap, но уже с
+                        помощью обычного цикла и/или базовых методов массива (pop, push, shift, unshift). Это упражнение поможет наглядно понять что делает спред оператор */ 
+      
+      function swap(arr) {
+        let [firstElem, ...rest] = arr;
+       
+        return [...rest, firstElem]
+      };
+
+      function swapManual(arr) {
+        let firstElem = arr[0];
+        let newArr =  arr.slice(1);
+        newArr.push(firstElem);
+        return newArr;
+      };
+
+
+      console.log( swap([1, 10, 9, 11]) ); // ==> [10, 9, 11, 1]);
+      console.log( swapManual([1, 10, 9, 11]) ); // ==> [10, 9, 11, 1]
+    </script>
+  </body>
+</html>
