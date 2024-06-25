@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Клонировать массив</title>
+  </head>
+  <body>
+    <script>
+      // Напишите функцию, которая будет клонировать входящий массив и возвращать новый массив
+
+      const cloneArr = (arr) => {
+        if (Array.isArray(arr) === false) {
+          return null;
+        }else {
+          let copyArr = arr.slice(); //Копия исходного массива
+          return copyArr;
+        };
+      };
+
+      console.log( cloneArr([100, 50]) ); // [100, 50]
+      console.log( cloneArr(100, 50) ); // null
+
+    </script>
+  </body>
+</html>

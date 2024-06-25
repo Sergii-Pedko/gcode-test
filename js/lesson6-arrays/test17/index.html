@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Нахождение уникальных</title>
+  </head>
+  <body>
+    <script>
+      // Ф-ция-uniqueCount должна находить количество уникальных чисел в массиве. Если число повторяется больше одного раза, то его стоит учитывать, но только один раз. Длина массива > 0
+      
+      let myArr = [1,4,1,8,3,4,8,8];  
+
+      function uniqueCount(array) {
+        if ( Array.isArray(array) === false) {
+          return null;
+        }else {
+          let newArr = [...new Set(array)];
+          console.log(newArr); // [1, 4, 8, 3]
+          return newArr.length; // Кол-во элементов в массиве -> длинна массива 
+        };
+      };
+
+      console.log( uniqueCount(myArr) ); //4
+      console.log( uniqueCount(1,2,3,3) ); //null
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Первые n элементов исходного массива</title>
+  </head>
+  <body>
+    <script>
+      // Создай ф-цию, которая создаст другой массив с ПЕРВЫМИ "n"  элементами входящего массива
+    // index    0        3  
+    let arr4 = [1, 2, 3, 4, 5];
+    //          1  2  3
+
+    //               index  0   3
+    let subArr = arr4.slice(0 , 3); 
+    console.log(subArr); //[1, 2, 3]
+    // ---------------------------------
+
+    const getSubArray = (arr, numberOfElements) => {
+      return arr.slice(0, numberOfElements); 
+    };
+
+    console.log( getSubArray([11, 4, 8, 3], 2) ); // ==> [11, 4]
+    console.log( getSubArray([1, 2, 3, 4, 5], 3) ); // ==> [1, 2, 3]
+    console.log( getSubArray(['some string', 'hello', 'I am happy'], 1) ); 
+    // ==> ['some string']
+
+    </script>
+  </body>
+</html>

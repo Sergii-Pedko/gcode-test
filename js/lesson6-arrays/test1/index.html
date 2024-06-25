@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get array elements</title>
+  </head>
+  <body>
+    <script>
+      // Создай функцию getArrayBounds, которая будет принимать массив и возвращать массив из 3-х элементов (длина, первый и последний элементы)
+
+      function getArrayBounds(arr) {
+        return (Array.isArray(arr) === true) ? [arr.length, arr[0], arr[arr.length-1]] : null;
+      };
+
+    // examples
+    console.log( getArrayBounds([1, 10, 9, 11]) ); // ==> [4, 1, 11]
+    console.log( getArrayBounds(10, 12, 14) ); // ==> null
+    console.log( getArrayBounds([1]) ); // ==> [1, 1, 1]
+    </script>
+  </body>
+</html>

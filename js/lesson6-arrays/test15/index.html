@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My includes</title>
+  </head>
+  <body>
+    <script>
+    //  ф-ция-реалазиция метода arr.includes(elem)- используя циклы
+
+    const includes = (arr, num) => {
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === num) {
+          return true;
+        };
+      };
+      return false;
+    };
+
+    console.log( includes([1, 4, 8, 3], 3) ); // ==> true;
+    console.log( includes([1, 4, 8, 3], 5) ); // ==> false;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Сортировка массива</title>
+  </head>
+  <body>
+    <script>
+      // Напишите две функции, которые будут сортировать массив чисел в порядке возрастания и убывания соответственно. Возвращаемое значение - отсортированный массив. Нельзя использовать стандартные методы массивов
+
+
+      function sortAsc(array) { /* По ВОЗРАСТАНИЮ */
+        if (Array.isArray(array) === false) {
+          return null;
+        }else {
+          array.sort(function (a, b) { return a - b });   
+        };
+        return array;
+      };
+
+      function sortDesc(array) { /*  По УБЫВАНИЮ */
+        if (Array.isArray(array) === false) {
+          return null;
+        }else {
+          array.sort(function (a, b) { return b - a });  
+        };
+        return array;
+      };
+
+      console.log( sortAsc([10, 5, 30, 1]) ); // [1, 5, 10, 30]
+      console.log( sortDesc([10, 5, 30, 1]) ); // [30, 10, 5 ,1]
+
+      console.log( sortAsc(10, 5, 3) ); // null
+
+
+    </script>
+  </body>
+</html>

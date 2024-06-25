@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Удаление дубликатов</title>
+  </head>
+  <body>
+    <script>
+      // Напишите функцию, которая будет удалять дубликаты с входящего массива и возвращать новый массив. Длина массива > 0 (Если это НЕ массив - возвращаем null)
+
+      let myArr = [1,1,2,2,3,3];
+
+      function removeDuplicates(array) {
+        if ( Array.isArray(array) === false) {
+          return null;
+        }else {
+          return [...new Set(array)];
+        };
+      };
+
+      console.log( removeDuplicates(myArr) ); //[1,2,3]
+      console.log( removeDuplicates(1,2,3,3) ); //null
+
+    </script>
+  </body>
+</html>
