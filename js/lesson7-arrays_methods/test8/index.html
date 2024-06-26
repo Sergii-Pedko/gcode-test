@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sum</title>
+  </head>
+  <body>
+    <script>
+      // Напишите функцию которая будет находить сумму элементов масссива</p>
+
+      let myArr = [2, 5, 6, 3, 0, 3, -1]; //sum = 18
+
+      function sum(arr) {
+        if (Array.isArray(arr) === false) {
+          return null;
+        }else {
+          return arr.reduce((prev, elem)=>{
+            return prev + elem;
+          }, 0);
+        };
+      };
+
+      console.log( sum(myArr) ); // 18
+    </script>
+  </body>
+</html>

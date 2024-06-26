@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Увеличение четных</title>
+  </head>
+  <body>
+    <script>
+    // Напишите функцию которая будет увеличивать четные числа массива на delta
+
+      let myArr = [2, 5, 6, 8, 11, 9, 4];
+
+      function increaseEvenEl1(arr, delta) {
+        if (Array.isArray(arr) === false) {
+          return null;
+        }else {
+          for (let i = 0; i < arr.length; i++) {
+             if (arr[i] % 2 === 0) {
+              arr[i] = arr[i] + delta;
+            };
+          };
+          return arr;
+        };
+      };
+
+      console.log(increaseEvenEl1(myArr, 20)); // [22, 5, 26, 28, 11, 9, 24]
+      console.log('******************')
+
+      let myArr1 = [2, 5, 6, 8, 11, 9, 4];
+
+      function increaseEvenEl(arr, delta) {
+        if (Array.isArray(arr) === false) {
+          return null;
+        }else {
+          return arr.map(elem =>{
+            if (elem % 2 === 0) {
+              return elem + delta;
+            }else {
+              return elem;
+            }
+          });
+        };
+      };
+
+      console.log(increaseEvenEl(myArr1, 20)); // [22, 5, 26, 28, 11, 9, 24]
+   
+
+    </script>
+  </body>
+</html>

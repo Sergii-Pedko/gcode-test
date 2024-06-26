@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Best students</title>
+  </head>
+  <body>
+    <script>
+      /*1) Создана функция-getMessagesForBestStudents
+        2) Функция принимает два аргумента - массивы. Первый аргумент - массив имен   
+           всей группы, второй аргумент - массив имен студентов, которые НЕ сдали экзамен (оба массива содержат строки - имена в качестве элементов)
+        3) Функция выбирает имена студентов, которые успешно сдали экзамен, и возращает 
+           массив сообщений для них в формате'Good job, Ann', где Ann- - это имя студента, которые сдал экзамен
+        4) Входящие массивы не меняются */
+        
+      // Массив имен ВСЕЙ группы
+      const allStudTest1 =   ['Den', 'John', 'Ann', 'Mike'];
+
+      // Массив массив имен студентов, которые НЕ сдали экзамен
+      const retakeStudTest1 = [      'John',        'Mike'];
+
+      /*1)  Ищем имена из массива-allStudentsList, которые НЕ вошли в 
+            массив-studentsForRetake => это и будут, те кто сдал экзамен;
+        2) К именам этих студентов добавить - 'Good job, ';    
+      */ 
+
+      const getMessagesForBestStudents = (allStudentsList, studentsForRetake) => {
+        return allStudentsList.filter(elem => {
+          return ( studentsForRetake.includes(elem) === false ); 
+        }).map(elem => {
+          return ('Good job, ' + elem);
+        });
+      };
+
+      console.log( getMessagesForBestStudents(allStudTest1, retakeStudTest1) ); // ===> ['Good job, Den', 'Good job, Ann']    
+
+      
+      const allStudTest2 = ['Den', 'John', 'Ann', 'Mike'];
+      const retakeStudTest2 = ['Den', 'John', 'Ann', 'Mike'];
+
+      console.log( getMessagesForBestStudents(allStudTest2, retakeStudTest2) ); // []
+    </script>
+  </body>
+</html>

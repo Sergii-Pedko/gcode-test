@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>находить имена</title>
+  </head>
+  <body>
+    <script>
+      // Напишите функцию которая будет находить имена в массиве строк, которые содержат входящую текст text и имеют длину больше 5
+
+      let myArr  = ['John', 'Olivya', 'Oleksandr', 'Emanuel', 'Vanya', 'Nastya'];
+      let mytext = 'ya';
+
+      // Проверочка
+      let str = 'Olivya';
+      console.log(str.length); //6
+
+      console.log( str.includes('ya') ) //true
+
+
+      function filterNames(arr, text) {
+        return arr.filter(elem => {
+          return ( elem.includes(text) && elem.length > 5 ) ;
+        });
+      };
+      
+      console.log( filterNames(myArr, mytext) ); //  ['Olivya', 'Nastya']
+     
+    </script>
+  </body>
+</html>
