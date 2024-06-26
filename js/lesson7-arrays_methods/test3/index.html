@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Плоский массив</title>
+  </head>
+  <body>
+    <script>
+      /*Создай функцию flatArray, которая будет принимать массив чисел, элементами которого могут быть дургие одномерные массивы и преобразует его в плоский массив
+
+      из МНОГОМЕРНОГО Массива - Сделать ОДНОМЕРНЫЙ 
+      
+      Функция должна отсортировать результирующий массив по возрастанию
+      Исходный массив не должен измениться */ 
+
+      var myArr = [ 
+                    20,
+                    [4,5,6],
+                    [1,2,3],
+                    [7,8,9],
+                    -3
+                  ];
+      console.log(myArr); //  [ 20, [4,5,6], [1,2,3], [7,8,9], -3 ];
+
+
+      const flatArray = arr => {
+        return arr.slice().reduce(function (prev, element, index) {
+          return prev.concat(element); // Метод arr1.concat(arr2) - ОБЪЕДЕНЯЕТ два Массива;
+        }, []).sort(function (a, b) { return a - b });
+
+        /* В одну строчку:
+        return arr.slice().reduce((acc,elem)=> acc.concat(elem), []).sort((a,b)=>a-b)
+        */ 
+      };   
+
+      console.log( flatArray(myArr) ); //==>  [-3, 1, 2, 3, 4, 5, 6, 7, 8, 9, 20]
+
+      console.log(myArr);//  [ 20, [4,5,6], [1,2,3], [7,8,9], -3 ] - исходный массив НЕ изменился;
+      
+    </script>
+  </body>
+</html>

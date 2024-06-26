@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Нахождение среднего арифм</title>
+  </head>
+  <body>
+    <script>
+      // Напишите функцию которая будет находить среднее арифметическое элементов масссива - Cчитаем СУММУ всех элем и Делим на Длинну Массива
+
+      let myArr = [2, 5, 6, 3]; //ср.ариф = 4
+
+      function arrAverage(arr) {
+        if (Array.isArray(arr) === false) {
+          return null;
+        }else {
+          return arr.reduce((prev, elem)=>{
+            return ( prev + elem );
+          }, 0) / arr.length;
+        };
+      };
+
+      console.log( arrAverage(myArr) ); // 4
+    </script>
+  </body>
+</html>

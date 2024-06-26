@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Фильтрация массива</title>
+  </head>
+  <body>
+    <script>
+      // Создайте функцию getSpecialNumbers, которая будет принимать массив чисел и возвращать отфильтрованный массив (с числами кратными 3)
+
+      function getSpecialNumbers(arr) {
+        return arr.filter((element, index)=>{
+          return (element % 3 === 0); // ==> [3, 9]
+          // return (element % 3); // ==> [10, 11]
+        });
+      };
+
+    // examples
+    console.log( getSpecialNumbers([3, 10, 9, 11]) ); // ==> [3, 9]
+    
+    </script>
+  </body>
+</html>

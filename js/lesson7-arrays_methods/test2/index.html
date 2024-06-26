@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sort массива</title>
+  </head>
+  <body>
+    <script>
+      /*Создайте функцию sortDesc, которая будет сортировать перданный массив чисел по УБЫВАНИЮ
+        Метод sort() - ИЗМЕНЯЕТ ИСХОДНЫЙ МАССИВ - чтобы такого Небыло - необходимо работать с КОПИЕЙ исходного массива - let copyArr = arr.slice() - КОПИРУЕТ исходный массив-arr  */ 
+
+        let myArr = [1, 10, -10, 4]
+
+      function sortDesc(arr) {
+        // arr.slice().sort(function (a, b) { return b - a });
+        return arr.slice().sort((a, b) =>  b - a );
+      };  
+
+      console.log(sortDesc(myArr)); //[10, 4, 1, -10]
+
+      console.log(myArr); // [1, 10, -10, 4] - исходный массив НЕ изменился !!!
+     
+    </script>
+  </body>
+</html>
