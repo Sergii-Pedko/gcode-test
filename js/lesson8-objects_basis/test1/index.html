@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Создание объектов</title>
+  </head>
+  <body>
+    <script>
+      // Создай функцию, которая входящий массив преобразует в объект
+
+      let myArr = ['a', 17.1, 'John Doe'];
+
+      const transformToObject = arr => {
+        let obj = new Object();
+        for (let i = 0; i < arr.length; i++) {
+          //   obj[key] = value
+          obj[ arr[i] ] =  arr[i];
+        };
+        return obj;
+      };
+
+    
+    // examples
+    console.log( transformToObject(['a', 17.1, 'John Doe']) ); 
+    // ==> { a: 'a', '17.1': 17.1, 'John Doe': 'John Doe' }
+
+    console.log( transformToObject(myArr) ); 
+    // ==> { a: 'a', '17.1': 17.1, 'John Doe': 'John Doe' }
+    
+    </script>
+  </body>
+</html>

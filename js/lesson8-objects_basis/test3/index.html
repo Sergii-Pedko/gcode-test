@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Read object properties</title>
+  </head>
+  <body>
+    <script>
+
+      const transaction = {
+                            // Свойство(ключ)    Значение 
+                            //       key:       productObj[key]  
+                                currency:      'USD',
+                                   value:       170,
+                                operation:     'sale',
+                                agent:          {
+                                                 country: 'Ukraine',
+                                                 company: 'NYSE',
+                                                },
+                          'operation time':     1584029990001,
+                          };
+   
+      console.log( transaction.currency ); //'USD'
+      console.log( transaction['value'] ); //170
+
+      const key = 'operation';
+      console.log( transaction[key] ); //'sale',
+      console.log( transaction['agent']['company'] ); //'NYSE'
+      console.log( transaction.agent.country ); //'Ukraine'
+      console.log( transaction['operation time'] ); //1584029990001
+
+      console.log(transaction);// obj
+      
+    </script>
+  </body>
+</html>

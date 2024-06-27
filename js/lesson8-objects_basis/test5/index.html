@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Перебор ключей объекта</title>
+  </head>
+  <body>
+    <script>
+    // Функция должна принять объект и вывести в консоль по очереди все свойства этого объекта>
+
+      const user = {
+                    // Свойство(ключ)  Значение 
+                    //       key:      obj[key]
+                            name:      'Tom',
+                             age:       17,
+                   };
+
+      function getKeys(obj) {
+        for (let key in obj) {
+          console.log(key);
+        };
+      };
+
+      getKeys(user); // name , age
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Назначение свойств объекта</title>
+  </head>
+  <body>
+    <script>
+      const user = {
+                    name: 'Tom',
+                    age: 17,
+                   };
+
+      //obj[key] = value
+      user.hobby = 'football';             
+      
+      const anotherKey = 'married';
+      user[anotherKey] = false;
+      
+      user['favorite music'] = 'rock';
+      user['address'] = {};
+      user['address']['country'] = 'Ukraine';
+      user['address']['building'] = 17;
+      console.log( user ); //obj
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Перебор свойств объектов</title>
+  </head>
+  <body>
+    <script>
+      let myObj = { name: 'John', age: 27, interest: 'porno' };
+
+      const concatProps = obj => {
+        let valueArr = [];
+        for (let key in obj) {
+          valueArr.push(obj[key]);
+        };
+        return valueArr; 
+      };
+      
+      console.log( concatProps({ name: 'John Doe', age: 17, interest: 'football' }) ); // ==> ['John Doe', 17, 'football']
+
+      console.log( concatProps(myObj) ); // ==> ['John', 27, 'poeno']
+     
+    </script>
+  </body>
+</html>

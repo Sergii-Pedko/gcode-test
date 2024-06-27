@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Доставание свойств из объекта</title>
+  </head>
+  <body>
+    <script>
+    /*Создай функцию, которая будет выбирать указанные свойства из объекта
+    Функция должна вернуть объект, который содержит только те свойства, которые перечислены в массиве*/ 
+
+      const user = {
+                    // Свойство(ключ)  Значение 
+                    //       key:      obj[key]
+                               a:       1,
+                               b:       2,
+                               c:       3
+                   };
+
+      const pickProps = (obj, props) => {
+        let keysArr = Object.keys(obj); //a ,b, c
+        let trueKeysArr = keysArr.filter(elem =>{
+          return (props.includes(elem) === true);
+           /* это НЕ возвращаемый Элемент - а ПРОВЕРКА (Условие) -
+                                             которое возвращает -true;
+                                              Это ЗАМЕНА if () - конструкции!!! 
+          т.е вернуть все Элементы Массива-keysArr, которые => если подставить в Метод includes() массива-props -> вернут true, т.е. такие-же элементы в массве-props - "ПРИСУТСТВУЮТ" */
+        });
+
+        console.log(trueKeysArr); //['a', 'c']
+
+        /* Что характерно - мы перебираем МАССИВ-Ключей, но вернуть мы можеи
+                        не только КЛЮЧИ, но и ЗНАЧЕНИЯ Объекта !!!
+        ---------------------------------------------------------------*/ 
+        let newObj = {};
+
+        // ПЕребираем  Массив-Ключей
+        for(let key of trueKeysArr) {
+
+          //            Ключ      ЗНАЧЕНИЕ объекта 
+          console.log(`${key} --- ${obj[key]}`); 
+
+          /*    a --- 1
+                c --- 3
+          */ 
+
+          // Наполняем НОВЫЙ объект-newObj
+          //  Ключ      передаем ЗНАЧЕНИЕ исходного объекта 
+          newObj[key] = obj[key]; 
+        };
+        return newObj;
+      };
+        
+
+      console.log( pickProps({ a: 1, b: 2, c: 3 }, ['a', 'c']) ); // ==> { a: 1, c: 3 }
+      console.log('*****************');
+
+      console.log( pickProps({ a: 1, b: 2, c: 3 }, ['a', 'c', 'd', 'hex']) ); 
+      // ==> { a: 1, c: 3 }
+       console.log('*****************');
+
+      console.log( pickProps({ a: 1, b: 2, c: 3 }, ['d', 'hex']) ); 
+      // ==> { }
+    </script>
+  </body>
+</html>
