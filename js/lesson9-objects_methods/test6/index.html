@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Объект в массив жителей</title>
+  </head>
+  <body>
+    <script>
+    // Данные о жителях дома храняться в виде объекта - вернуть Массив имен жителей
+
+      rooms = {
+        room1: [
+          { name: 'Jack' },
+          { name: 'Andrey' },
+          { name: 'Ann' },
+        ],
+
+        room2: [
+          { name: 'Dan' },
+        ],
+
+        room3: [
+          { name: 'Denis' },
+          { name: 'Max' },
+        ],
+      };
+
+      rooms1 = { };
+
+      const getPeople = obj => {
+        let arrValues = Object.values(obj); //[[{…}, {…}, {…}], [{…}], [{…}, {…}]]
+        //console.log(arrValues);
+
+        if (arrValues.length === 0) {
+          return [];
+        }else {
+          let resArr = arrValues.reduce((prev, elem)=>{//Объединяем ВСЕ в Один Массив-Объектов
+            return prev.concat(elem);
+          });
+
+          //console.log(resArr);// [{…}, {…}, {…}, {…}, {…}, {…}]
+
+          let arrName = [];
+
+          for (let i = 0; i < resArr.length; i++) {
+            arrName.push(resArr[i]['name']);// Наполняем Новый МАССИВ - данными из объекотов по ключу-['name']
+          };
+          return arrName;
+        }
+      };
+      
+      console.log( getPeople(rooms) ); //  ['Jack', 'Andrey', 'Ann', 'Dan', 'Denis', 'Max']
+
+      console.log( getPeople(rooms1) ); //  []
+    </script>
+  </body>
+</html>

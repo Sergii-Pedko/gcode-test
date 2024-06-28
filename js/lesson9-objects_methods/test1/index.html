@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Методы работы с объектами</title>
+  </head>
+  <body>
+    <script>
+          // Создай функцию, которая найдет в объекте всех людей, которым исполнилось 18 лет - вернет массив
+
+      const getAdults = obj => {
+        let arr18 = [];
+        for (let key in obj) {
+          if (obj[key] >=18) { // ПЕребираем Исходный-объект;
+
+            // Наполняем массивт-arr18;
+            //         Ключ-Исходного объекта 
+            arr18.push(key); 
+          };
+        };
+        return arr18;
+      };
+
+      console.log( getAdults({ 'John Doe': 19, Tom: 17, Bob: 18 }) ); // ==> [ 'John Doe',Bob]
+      
+      console.log( getAdults({ Ann: 56, Andrey: 7 }) ); // ==> [ Ann ]
+    
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Копирование объекта</title>
+  </head>
+  <body>
+    <script>
+      /*Создать Ф-цию, которая делала КОПИЮ (КЛОН) переданного в аргумент Объекта  */ 
+
+      let user = {
+                  id: 1001,
+                  name: 'Sergii',
+                  age: 50
+                 };        
+
+      function copyObj(obj) {
+        let resObj = {}; //Cоздаем пустой объект
+
+        for (let key in obj) { // ПЕребираем Исходный-объект;
+          /*Циклом наполняем НОВЫЙ Объект по принципу obj[key] = value
+             obj[key] = value */
+          resObj[key] = obj[key];
+          
+        };
+        return resObj;
+      };
+
+      console.log( copyObj(user) ); //  {id: 1001, name: 'Sergii', age: 50}
+      console.log(user); // ИСХОДНИК  {id: 1001, name: 'Sergii', age: 50}
+     
+    </script>
+  </body>
+</html>

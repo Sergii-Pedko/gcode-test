@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Посчитать баланс по всем транзакциям</title>
+  </head>
+  <body>
+    <script>
+     // Задан массив транзакций. Нужно посчитать итоговую сумму транзакций
+
+      const dayTransactions = [
+        { userId: 22, amount: 60, operation: 'sell' },
+        { userId: 22, amount: 160, operation: 'buy' },
+        { userId: 44, amount: 90, operation: 'sell' },
+      ];
+
+      const getTotalRevenue = transactions => {
+        return transactions.reduce((prev, {amount}) =>{
+           /*В массиве-объектов-типа dayTransactions
+              провели деструктуризацию  - {userId, amount, operation} */
+          return prev + amount; 
+        }, 0);
+      };
+      
+      console.log( getTotalRevenue(dayTransactions) ); // ==> 310 
+      
+      
+       </script>
+  </body>
+</html>

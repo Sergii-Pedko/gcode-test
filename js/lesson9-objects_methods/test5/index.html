@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Merge objects</title>
+  </head>
+  <body>
+    <script>
+    // Напиши 4 ф-ции, которые будут мержить (сливать) один объединять с другим
+
+      const obj1 = {
+                    name: 'Tom',
+                    age: 17,
+                  };
+
+      const obj2 = {
+                    name: 'Bob',
+                    student: false,
+                   };
+      
+      /*  Если в объектах будут ОДИНАКОВЫЕ КЛЮЧИ-key
+      ТО В ЦЕЛЕВОМ ОБЪЕКТЕ  - Будут пары key: obj[key] Только КРАЙНЕГО объекта, который входит в Целевой (это правило работает и в spread-операциях) */
+
+      function mergeObjectsV1(obj1, obj2) {
+        return Object.assign({}, obj1, obj2);
+      };// ==> { name: 'Bob', age: 17, student: false }
+
+      function mergeObjectsV2(obj1, obj2) {
+        return Object.assign({}, obj2, obj1);
+      };// ==> { name: 'Tom', age: 17, student: false }
+
+      function mergeObjectsV3(obj1, obj2) {
+        return {...obj1, ...obj2};
+      };// ==> { name: 'Bob', age: 17, student: false }
+
+      function mergeObjectsV4(obj1, obj2) {
+        return {...obj2, ...obj1};
+      }; // ==> { name: 'Tom', age: 17, student: false }
+      
+      
+      console.log( mergeObjectsV1(obj1, obj2) );
+      console.log( mergeObjectsV2(obj1, obj2) ); 
+      console.log( mergeObjectsV3(obj1, obj2) );
+      console.log( mergeObjectsV4(obj1, obj2) ); 
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Добавление свойства в объект</title>
+  </head>
+  <body>
+    <script>
+      /*Напиши 4 ф-ции, которые будут добавлять св-во в объект разным способом*/
+      const user = {
+        name: 'Sam',
+      };
+
+
+      function addPropertyV1(userData, userId) {
+        userData.id = userId;
+        return userData;
+      }; //Ф-ция изменяет исходник-user
+
+      function addPropertyV2(userData, userId) {
+        return Object.assign(userData, {id: userId});
+      };/*Object.assign({}); -> {} - говорит о том, что ФОРМИРУЕМ НОВЫЙ ПУСТОЙ 
+                                     ОБЪЕКТ  - В КОТОРЫЙ КОПИРУЕМ другие ОБЪЕКТЫ - такого сделано НЕ было
+                                     Ф-ция изменяет исходник-user */
+
+      function addPropertyV3(userData, userId) {
+        return Object.assign({...userData, id: userId});
+      }; /*{} - говорит о том, что ФОРМИРУЕМ НОВЫЙ ПУСТОЙ ОБЪЕКТ  - В КОТОРЫЙ 
+                КОПИРУЕМ другие ОБЪЕКТЫ - такого сделано НЕ было
+                Ф-ция  НЕ изменяет исходник-user!!!
+      */
+
+      function addPropertyV4(userData, userId) {
+        return {...userData, id: userId};
+      }; // Ф-ция  НЕ изменяет исходник-user!!!
+
+
+      // examples ==> { name: 'Sam', id: '1234567' }
+      
+      console.log( addPropertyV1(user, '1234567') );
+      //console.log(user);
+      console.log('*****************');
+
+      console.log( addPropertyV2(user, '1234567') );
+      //console.log(user);
+      console.log('*****************');
+
+      console.log( addPropertyV3(user, '1234567') );
+      //console.log(user);
+      console.log('*****************');
+
+      console.log( addPropertyV4(user, '1234567') );
+      //console.log(user);          
+    </script>
+  </body>
+</html>
