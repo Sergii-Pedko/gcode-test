@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Max absolute number</title>
+  </head>
+  <body>
+    <script>
+      /*Создайй ф-цию, которая будет возвращать максимальное по модулю число в массиве*/
+      const getMaxAbsoluteNumber = arr => {
+        if (Array.isArray(arr) === false || arr.length === 0) {
+          return null;
+        } else {
+            let absArr = [];
+            for (let i = 0; i < arr.length; i++) {
+              absArr.push( Math.abs(arr[i]) );
+            };
+            console.log(absArr); //[777, 3, 1, 45, 20]
+
+            /*return Math.max.call(null, arr);  - тоже работает !!!
+
+            ПЕРВЫЙ АРГУМЕНТ - ЭТО ОБЪЕКТ!!!
+            если объекта НЕТ - то в скобках СНАЧАЛА ПИШЕМ null (здесь ОБЪЕКТА НЕТ - ЕСТЬ ПРОСТО Ф-ЦИЯ Math.min - в КОТОРУЮ МЫ ХОТИМ вставить МАССИВ как АРГУМЕНТ */ 
+            return Math.max(...absArr); //77
+          };
+      };
+
+      console.log( getMaxAbsoluteNumber([-10, 10, -10]) ); // ===> 10
+      console.log( getMaxAbsoluteNumber([2.1, 0, 1.6]) ); // ===> 2.1
+      console.log( getMaxAbsoluteNumber([-6, 3, 5, -1]) ); // ===> 6
+      console.log( getMaxAbsoluteNumber([-777, 3, -1, 45, -20]) ); // ===> 777
+              
+    </script>
+  </body>
+</html>

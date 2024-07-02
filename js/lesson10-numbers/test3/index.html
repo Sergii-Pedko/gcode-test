@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rounding numbers</title>
+  </head>
+  <body>
+    <script>
+      // Функция должна округлять полученное число до до 2-х знаков после запятой ПЯТЬЮ разными способами - и вернуть массив округлений
+
+      const multiRound = num => {
+        return [
+                Math.floor(num * 100) / 100, /* финт округления числа 11.12556 - не до 
+                                                ближайшего МЕНЬШЕГО ЦЕЛОГО-11, 
+                                                а до ближайшего МЕНЬШЕГО ДРОБНОГО-11.12 */
+                Math.trunc(num * 100) / 100,
+                Math.ceil(num * 100) / 100,
+                Math.round(num * 100) / 100,
+                Number(num.toFixed(2)), /*САМЫЙ НОРМАЛЬНЫЙ МЕТОД - в аргумент передаем
+                                          кол-во знаков после запятой для округления */
+              ];
+      };
+
+      // examples
+      console.log( multiRound(11.12556) ); // ==> [11.12, 11.12, 11.13, 11.13, 11.13]
+      console.log( multiRound(6.112) ); // ==> [6.11, 6.11, 6.12, 6.11, 6.11]
+    </script>
+  </body>
+</html>

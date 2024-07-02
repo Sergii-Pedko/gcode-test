@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Проверка чисел</title>
+  </head>
+  <body>
+    <script>
+      // Создай функции, которые будут искать указанные числа в массиве
+
+      let arr16 = [10, 15.2345, 45.56, 4, 99, '12', 'twenty', 0, null, undefined, 'text', NaN, Infinity]; 
+
+      const getFiniteNumbers = arr => { /*Не явл Конечными числами-метод
+                                          Number.isFinite(elem)  */ 
+       return arr.filter(elem =>{
+        return ( Number.isFinite(elem) === true);
+       });
+      };
+
+      console.log( getFiniteNumbers(arr16) ); 
+      //   [10, 15.2345, 45.56, 4, 99, 0];
+
+      const getFiniteNumbersV2 = arr => { /*Не явл Конечными числами-метод
+                                           isFinite(elem)  */
+       return arr.filter(elem =>{
+        return ( isFinite(elem) === true);
+       });
+      };
+
+      console.log( getFiniteNumbersV2(arr16) ); 
+      // [10, 15.2345, 45.56, 4, 99, '12', 0, null]
+
+
+      const getNaN = arr => {  /*Вернуть все элементы массива, которые имеют значение -NaN-метод  Number.isNaN(elem)  */
+       return arr.filter(elem =>{
+        return ( Number.isNaN(elem) === true);
+       });
+      };
+
+      console.log( getNaN(arr16) ); // [NaN]
+
+      const getNaNV2 = arr => {  /*Вернуть все элементы массива, которые имеют значение-NaN-метод isNaN(elem))  */
+       return arr.filter(elem =>{
+        return ( isNaN(elem) === true);
+       });
+      };
+
+      console.log( getNaNV2(arr16) ); // ['twenty', undefined, 'text', NaN]
+
+      const getIntegers = arr => {  /*Вернуть все элементы массива, которые имеют зНЕ Дробное число - Целое  */
+       return arr.filter(elem =>{
+        return ( Number.isInteger(elem) === true);
+       });
+      };
+
+      console.log( getIntegers(arr16) ); // [10, 4, 99, 0]
+    </script>
+  </body>
+</html>

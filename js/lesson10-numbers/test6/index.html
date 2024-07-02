@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random numbers array</title>
+  </head>
+  <body>
+    <script>
+      /*Создадим функцию, которая будет возвращать массив целых случайных  чисел из заданного промежутка
+
+      Для нахождения случайных чисел в промежутке используй формулу: 
+                    Math.random() * (max - min) + min
+      где min - начало премежутка, max - конец промежутка. 
+      УСЛОВИЕ:
+      min- число (может быть дробное, всегда положительное) - начало промежутка
+     
+      max -число (может быть дробное, всегда положительное) - конец промежутка, больше начала промежутка
+      
+      Eсли в заданном промежутке НЕТ ЦЕЛЫХ чисел ИЛИ если  min > max - вернем null*/
+      
+      // Проверочка - создаем Новый массив - длиноой=3
+
+    console.log( new Array(3) ); // [empty × 3]
+    console.log( Array(3) );     // [empty × 3]
+
+    console.log( Array(3).fill() ); // [undefined, undefined, undefined]
+    // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/fill
+
+      //                                 min  max
+      const getRandomNumbers = (length, from, to) => {
+        // Округляем СРАЗУ
+        from = Math.ceil(from); //если число всегда положительное
+        to = Math.ceil(to); //если число всегда положительное
+         
+        if (to - from < 1 || from > to) {
+          // Условие, что в промежутке НЕТ ЦЕЛЫХ чисел
+          return null;
+        };
+        return Array(length)
+          .fill()
+          .map(() => Math.floor(Math.random() * (to - from) + from));
+
+        // Cначала создаем массив [undefined, undefined, undefined]
+        // на его основе создаем массив случайных чисел (на заданном промежутке)
+      };
+
+      //https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+
+      console.log( getRandomNumbers(5, 1.4, 3.22) ); // ==> [2, 2, 2, 3, 2]
+      console.log( getRandomNumbers(5, 1.4, 3.22) ); // ==> [3, 2, 2, 2, 2]
+      console.log( getRandomNumbers(5, 1.4, 3.22) ); // ==> [3, 3, 2, 3, 2]
+
+      console.log( getRandomNumbers(3, 2.4, 4.5) ); // ==> [4, 3, 4]
+      console.log( getRandomNumbers(3, 1.9, 2.5) ); // ==> [2, 2, 2]
+
+      console.log( getRandomNumbers(7, 1.4, 1.9) ); // ==> null
+      console.log( getRandomNumbers(7, 2.11, 2.9) ); // ==> null
+      console.log( getRandomNumbers(1, 2.5, 0.9) ); // ==> null
+
+
+    </script>
+  </body>
+</html>

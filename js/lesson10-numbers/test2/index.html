@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Парсинг чисел</title>
+  </head>
+  <body>
+    <script>
+       // Создай функции, которые будут искать указанные числа в массиве
+
+       let arr17 = [4, 5.6, '   5.7px', 'ten', 0, null, undefined, NaN, Infinity]; 
+
+      const getParsedIntegers = arr => { /* должна каждый элемент привести к целому чилому  метод Number parseInt()  */ 
+        return arr.map(elem =>{
+          return Number.parseInt(elem);
+        });
+      };
+
+      console.log( getParsedIntegers(arr17) ); 
+      //   [4, 5, 5, NaN, 0, NaN, NaN, NaN, NaN]
+
+      const getParsedIntegersV2 = arr => { /* должна каждый элемент привести к целому чилому  метод Number parseInt()  */ 
+        return arr.map(elem =>{
+          return parseInt(elem);
+        });
+      };
+
+      console.log( getParsedIntegersV2(arr17) ); 
+      //  аналогично [4, 5, 5, NaN, 0, NaN, NaN, NaN, NaN]
+
+
+      const getParsedFloats = arr => { /* должна каждый элемент привести к дробному числу метод  Number.parseFloat()  */ 
+        return arr.map(elem =>{
+          return Number.parseFloat(elem);
+        });
+      };
+
+      console.log( getParsedFloats(arr17) ); 
+      //  [4, 5.6, 5.7, NaN, 0, NaN, NaN, NaN, Infinity]
+
+
+      const getParsedFloatsV2 = arr => { /* должна каждый элемент привести к дробному числу метод parseFloat()  */ 
+        return arr.map(elem =>{
+          return parseFloat(elem);
+        });
+      };
+
+      console.log( getParsedFloatsV2(arr17) ); 
+      // аналогично [4, 5.6, 5.7, NaN, 0, NaN, NaN, NaN, Infinity]
+
+      
+
+     
+    </script>
+  </body>
+</html>
