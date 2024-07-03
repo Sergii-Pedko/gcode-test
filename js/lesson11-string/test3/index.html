@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Разбить строку на подстроки</title>
+  </head>
+  <body>
+    <script>
+            /*Напишите ф-цию, которая разделит входящую строку на подстроки с указанным к-вом символов и вернет их массив
+
+    Основные требования:
+    Функция должна принимать строку в первом аргументе и число во втором
+    Число во втором аргументе должно указывать, сколько символов будет в каждой подстроке
+    Функция должна вернуть массив подстрок (каждый новый кусочек текста - элем. массива) 
+    Последняя подстрока должна быть дополнена точками  до нужного к-ва символов
+    -----------------------------------------------------------------------------*/ 
+
+      // substr - возвращает строку начиная с Укзанного ИНДЕКСА, Указанной ДЛИННЫ.
+      // index =  01234
+      let str7 = "jo";
+      let chunk = str7.substr(0, 4);
+      console.log(chunk); // jo
+      // --------------------------------------
+      //Последняя подстрока должна быть дополнена точками до нужного к-ва символов
+
+      let length = 4 // нужное к-во символов
+      console.log(chunk.length); //  А у нас всего - 2 символа => jo
+
+      //        2      <    4
+      if (chunk.length < length) {
+        for (let i = chunk.length; i < length; i++) {
+          chunk =  chunk + '.';
+        };  
+      };
+
+      console.log(chunk); //jo..
+
+
+      /*length = 10 в Агументе ф-ции говорит, что если при вызове ф-ции этот аргумент НЕ ЗАДАДУТ, то ф-ция сама подставит в ргумент - число 10 */ 
+      const splitString = (str, length = 10) => {
+        const arr = [];
+        let startPosition = 0;
+
+        if (typeof str !== 'string') { //если в первом аргументе не строка
+          return null;
+        };
+
+        while (true) { // Формально это бесконечный цикл - нам нужен выход из цикла-стр.54-56
+
+          // На кождой итерации мы будем отрезать от строки кусок и записывать в переменную-chunk
+          let chunk = str.substr(startPosition, length);
+
+          if (chunk.length === 0) {
+            break;
+          };
+
+          if (chunk.length < length) {
+            for (let i = chunk.length; i < length; i++) {
+              chunk =  chunk + '.';
+            };  
+          };
+
+          arr.push(chunk);
+
+          startPosition = startPosition + length; //Увеличиваем счетчик
+        };
+        return arr; //  ['abcd', ' efg', 'h...']
+      };
+
+      console.log(splitString('abcd efgh', 4));
+    </script>
+  </body>
+</html>

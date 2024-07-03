@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Сортировка строк</title>
+  </head>
+  <body>
+    <script>
+      /*Напишите ф-цию, которая будет сортировать список контактов-ПО ИМЕНИ в заданном направлении (Второй аргумент: direct -> true - по Возрастанию, false - по Убыванию) - По умолчанию сортировка должна происходить по возрастанию.
+      */ 
+
+      //          Узнаем по КОДУ - Символ 
+      console.log( String.fromCodePoint(65) ) // A
+      // ---------------------------
+
+      console.log( 'Ann'.charCodeAt(0) ); //Первая буква -A => Имеет КОД = 65
+      console.log( 'ann'.charCodeAt(0) ); //Первая буква -a => Имеет КОД = 97
+      
+      //            97 > 65 - так сравнивают СТРОЧНЫЕ символы
+      console.log( 'a' > 'A' ); //treue
+      // --------------------------------
+
+      /*Метод СРАВНЕНИЯ СТРОК - localeCompare() -  возвращает число, указывающее как  
+                                 расположена строка относительно указанной (переданной как параметр) в порядке сортировки: перед (-1), после (1) или они равны. (0)  */ 
+
+
+      console.log( "cd".localeCompare("ab") ); // 1 =>, "cd" сортируется ПОСЛЕ "ab"
+      console.log( "ab".localeCompare("ab") ); // 0 =>, две строки равны
+      console.log( "ab".localeCompare("cd") ); // -1 =>, "ab" сортируется ДО "сd"
+      
+
+      // https://jsexpert.net/handbook/javascript/string/localecompare/
+
+
+      let contacts = [
+        {
+          name: 'Tom',
+          phoneNumber: '666-66-66'
+        },
+        {
+          name: 'John',
+          phoneNumber: '555-55-55'
+        },
+        {
+          name: 'Ann',
+          phoneNumber: '333-33-33'
+        },
+        {
+          name: 'Stephan',
+          phoneNumber: '444-44-44'
+        },
+        {
+          name: 'Suzy',
+          phoneNumber: '222-22-22'
+        },
+        {
+          name: 'Adel',
+          phoneNumber: '111-11-11'
+        },
+      ];
+
+      const sortContacts = (arr, direct = true) => {
+        if (Array.isArray(arr) === false) {
+          return null;
+        };
+
+        if (!direct) {
+          return arr.sort((a, b) => b.name.localeCompare(a.name));
+        } else {
+          return arr.sort((a, b) => a.name.localeCompare(b.name));
+        };
+      };
+
+      //console.log( sortContacts(contacts) );
+      console.log( sortContacts(contacts, false) );
+      
+
+     
+    </script>
+  </body>
+</html>

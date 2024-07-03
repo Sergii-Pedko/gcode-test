@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Разбить текст на строки</title>
+  </head>
+  <body>
+    <script>
+      /*Напишите ф-цию, которая разделит входящую строку на строки с указанным к-вом символов и вернет их в многострочном формате
+
+    Основные требования:
+    Функция должна принимать строку в первом аргументе и число во втором
+    Число во втором аргументе должно указывать, сколько символов будет в каждой подстроке
+    Функция должна вернуть многострочную строку (каждый новый кусочек текста выводиться в новой строке) 
+    Каждая строка должна начинаться с большой буквы
+    -----------------------------------------------------------------------------*/ 
+
+      // substr - возвращает строку начиная с Укзанного ИНДЕКСА, Указанной ДЛИННЫ.
+      // index =  0123456789
+      let str7 = "bill gates";
+
+      let chunk = str7.substr(0, 4);
+      console.log(chunk); // bill
+
+      /*Теперь нам нужно чтобы этот кусок-chunk строки - начмнался С БОЛЬШОЙ БУКВЫ
+        1) Строка - это массив, значит chunk[0] -> соответствует литере 'b' -> в ВЕРХН.РЕГИСТР
+        2) Метод метод slice(1) - скопирует строку - начиная с ИНДЕКСА-1;
+        3) Cклеим все это в одну строку (сконкатенируем)
+      */ 
+      let firstLetter = chunk[0].toUpperCase(); //B
+      console.log(firstLetter);
+
+      let chunkSubstr =  chunk.slice(1)
+      console.log(chunkSubstr); // ill
+
+      //                 B              +     ill       = Bill
+      let res9 = chunk[0].toUpperCase() + chunk.slice(1) 
+      console.log(res9); // Bill
+
+
+      /*length = 10 в Агументе ф-ции говорит, что если при вызове ф-ции этот аргумент НЕ ЗАДАДУТ, то ф-ция сама подставит в ргумент - число 10 */ 
+      const splitString = (str, length = 10) => {
+        const arr = [];
+        let startPosition = 0;
+
+        if (typeof str !== 'string') { //если в первом аргументе не строка
+          return null;
+        };
+
+        while (true) { // Формально это бесконечный цикл - нам нужен выход из цикла-стр.56-58
+
+          // На кождой итерации мы будем отрезать от строки кусок и записывать в переменную-chunk
+          const chunk = str.substr(startPosition, length);
+
+          if (chunk.length === 0) {
+            break;
+          };
+          
+          arr.push(chunk[0].toUpperCase() + chunk.slice(1))
+
+          startPosition = startPosition + length; //Увеличиваем счетчик
+        };
+        console.log(arr); // ['Abcd', ' efg', 'H']
+
+        return arr.join('\n') /* массив строк объеденяем в одну строку через
+                                              разделитель-перенос строки ( \n ) 
+                                Abcd
+                                efg
+                                H */      
+      };
+
+      console.log(splitString('abcd efgh', 4));
+    </script>
+  </body>
+</html>

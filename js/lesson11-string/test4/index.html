@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Count occurences</title>
+  </head>
+  <body>
+    <script>
+      /*Напиши ф-цию, которая найдет количество вхождений подстроки в строку*/
+
+      /*text = '' в Агументе ф-ции говорит, что если при вызове ф-ции этот аргумент 
+                  НЕ ЗАДАДУТ, то ф-ция сама подставит в ргумент по умолчанию - пустую строку */ 
+      const countOccurrences = (text = '', str) => {
+        if (str === '') {  //если во втором аргументе не строка
+          return null
+        };
+
+        console.log( text.split(str) ); // ['my na', ' is ', 'nson']
+        return text.split(str).length - 1;
+      };
+
+      console.log(countOccurrences('my name menny menson', 'me')); //3
+                                // ['my na | me', ' ', ' me |nny ', ' me| nson']
+
+      console.log(countOccurrences('my name is menny menson', 'me')); //3
+                                //  ['my na |me', ' is ', 'me| nny ', 'me| nson']
+
+    //  Мы видим, что в любом случае 'me' - так разбивает строку на массив подстрок - в которм во ВСЕХ эл-тах массива 'me' - ОТСУТСТВУЕТ, кроме в одном случае - ' ', во втором - ' is ' -> т.е. кол-во вхождений это длинна массива за минусом ОДИН (на пустую строку или ' is ')
+     
+              
+    </script>
+  </body>
+</html>
