@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverse String</title>
+  </head>
+  <body>
+    <script>
+      //Функция должна вернуть строку, где символы будут идти в обратном порядке
+
+      const reverseString = str => {
+        if (typeof str !== 'string') { //если в аргументе не строка
+          return null;
+        };
+        return str.split('').reverse().join('');
+      };
+
+      console.log( reverseString('abcd') ); //'dcba'
+      
+    </script>
+  </body>
+</html>

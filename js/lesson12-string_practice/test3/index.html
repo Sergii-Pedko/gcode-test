@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Очистка данных о транзакциях</title>
+  </head>
+  <body>
+    <script>
+      // Функция должна принимать как аргумент массив транзакций 
+      let myArr = ['  1.9 ', '16.4', 17, ' 1 dollar '];
+
+      // а возвращать: ['$1.90', '$16.40', '$17.00']
+
+      // Нам необходимо отсечь элемент, который содежит "Цифры и БУКВЫ"->' 1 dollar ' 
+      console.log('  1.9 ' / 0);// Infinity
+      console.log(17 / 0);      // Infinity
+      console.log(' 1 dollar ' / 0);// NaN
+      // именно такое условие - передадим в Метод-filter
+      
+ 
+      const cleanTransactionsList = arr => {
+        // Применим Цепочку методов
+        return arr
+        .filter(elem => elem / 0) // ['  1.9 ', '16.4', 17]
+        .map(elem => parseFloat(elem).toFixed(2)) //  ['1.90', '16.40', '17.00']
+        .map(elem => "$" + elem); // ['$1.90', '$16.40', '$17.00']
+      };
+
+      console.log( cleanTransactionsList(myArr) ); // ['$1.90', '$16.40', '$17.00']
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Калькулятор</title>
+  </head>
+  <body>
+    <script>
+      /*Создайте ф-цию, которая будет принимать выражение на вход и вернет результат вычислений
+
+      Основные требования:
+      Ф-ция должна принимать как аргумент строку в формате число, пробел, оператор, число ('1 + 2') => возращать  ('1 + 2 = 3')
+      ----------------------------------------------------------------------------*/ 
+     
+      const calc = str => {
+        let arr = str.split(' '); //Обязательно с пробелом
+        //          index =  0     1    2
+        console.log(arr);// ['1', '+', '2']
+
+        let res;
+
+        switch (arr[1]) {
+          case '+':
+            res =  Number(arr[0]) + Number(arr[2]);
+            break;
+            
+          case '-':
+            res =  Number(arr[0]) - Number(arr[2]);
+            break;
+          
+          case '*':
+            res = Number(arr[0]) * Number(arr[2]);
+            break;
+          
+          case '/':
+            res =  Number(arr[0]) / Number(arr[2]);
+            break;
+        };
+        // return str + ' ' + '=' + ' ' + res;
+        return `${str} = ${res}`;
+      };
+
+      console.log( calc('8 / 4'));
+      
+    </script>
+  </body>
+</html>
