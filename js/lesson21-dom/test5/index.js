@@ -7,5 +7,5 @@ export let setTitle = (text)=> {
   return elem;
 };
 
-console.log( setTitle('Vasya') );
+
   
