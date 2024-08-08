@@ -19,7 +19,7 @@ export let finishList = () => {
   li5.after(li6);
 };
 
-finishList();
+//finishList();
 
 
 
