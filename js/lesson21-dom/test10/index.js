@@ -5,7 +5,7 @@ export let finishForm = ()=> {
   inpLogin.setAttribute('name', 'login');
   form.prepend(inpLogin);
 
-  let inpPass = form[1]; 
+  let inpPass = document.querySelector('input[type=text]'); 
   inpPass.setAttribute('type', 'password');
 };
 
