@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Установка атрибутов для DOM элементов</title>
+  </head>
+  <body>
+    <div class="pagination">
+      <button class="pagination__page" data-page-number="1">КНОПКА-1</button>
+      <button class="pagination__page" data-page-number="2">КНОПКА-2</button>
+      <button class="pagination__page" data-page-number="3">КНОПКА-3</button>
+    </div>
+    
+  <!--  Чтобы МОДУЛИ работали БЕЗ СБОРЩИКОВ необходимо: 
+    1) Пописать в index.html : <script type="module" src="./modules.js"></script>
+                              в стандартном подключении дописываем type="module"
+  
+    2) Запускаем index.html(при помощи Live Server): ПКМ -> Open with Live Server
+     _____________________________________________________________________________ -->
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
