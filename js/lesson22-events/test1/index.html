@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css">
+    <title>Events propagation</title>
+  </head>
+  <body>
+    <div class="rect rect_div">
+      div
+      <p class="rect rect_p">
+        p
+        <span class="rect rect_span">span</span>
+      </p>
+    </div>
+    <div class="rect events-list">
+      <!-- this spans are generated with clicks -->
+      
+    </div>
+    <button class="btn clear-btn">Clear</button>
+    <button class="btn remove-handlers-btn">Remove handleds</button>
+    <button class="btn attach-handlers-btn">Attach handleds</button>
+    
+    <!--  Чтобы МОДУЛИ работали БЕЗ СБОРЩИКОВ необходимо: 
+    1) Пописать в index.html : <script type="module" src="./modules.js"></script>
+                              в стандартном подключении дописываем type="module"
+  
+    2) Запускаем index.html(при помощи Live Server): ПКМ -> Open with Live Server
+     _____________________________________________________________________________ -->
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
