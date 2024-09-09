@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo List</title>
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+      integrity="sha256-WAgYcAck1C1/zEl5sBl5cfyhxtLgKGdpI3oKyJffVRI="
+      crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+<h1 class="title">Todo List</h1>
+<main class="todo-list">
+  <div class="actions">
+    <input class="task-input" type="text" />
+    <button class="btn create-task-btn">Create</button>
+  </div>
+  <ul class="list">
+    <!-- 
+        <li class="list__item">
+          <input type="checkbox" data-id="4" class="list__item-checkbox">
+          Visit doctor
+        </li>
+        ... 
+        <li class="list__item list__item_done">
+          <input type="checkbox" checked="checked" data-id="1" class="list__item-checkbox">
+          Buy milk
+        </li>
+      -->
+  </ul>
+</main>
+ <!--  Чтобы МОДУЛИ работали БЕЗ СБОРЩИКОВ необходимо: 
+    1) Пописать в index.html : <script type="module" src="./modules.js"></script>
+                              в стандартном подключении дописываем type="module"
+  
+    2) Запускаем index.html(при помощи Live Server): ПКМ -> Open with Live Server
+     _____________________________________________________________________________ -->
+<script src="src/scripts/index.js" type="module"></script>
+</body>
+</html>
