@@ -1,0 +1,24 @@
+.counter {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter__value {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.counter__button {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
